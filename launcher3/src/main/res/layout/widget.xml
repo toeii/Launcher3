@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:gravity="center"
+    >
+
+    <TextClock
+        android:id="@+id/tcTime"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:format24Hour="HH:mm"
+        android:format12Hour="hh:mm"
+        android:gravity="center"
+        android:textColor="#FFF"
+        android:textSize="60sp"
+        android:text="123"
+        />
+
+    <TextClock
+        android:id="@+id/tcDate"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:textColor="#FFF"
+        android:textSize="15sp"
+        android:format24Hour="MM月dd日 EEEE"
+        android:format12Hour="MM月dd日 EEEE" />
+
+
+</LinearLayout>
