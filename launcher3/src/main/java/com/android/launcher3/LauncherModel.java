@@ -3115,16 +3115,16 @@ public class LauncherModel extends BroadcastReceiver
             final HashMap<ComponentName, AppInfo> addedOrUpdatedApps =
                     new HashMap<ComponentName, AppInfo>();
 
-            if (added != null) {
+            if (added != null && added.size()>0) {
 
-                //TODO 屏蔽二层加载
-//                addAppsToAllApps(context, added);
+//                addAppsToAllApps(context, added);//TODO 屏蔽二层加载
 
-                final ArrayList<ItemInfo> addedInfos = new ArrayList<ItemInfo>(added);
-                addAndBindAddedWorkspaceItems(context, addedInfos);
-
-                for (AppInfo ai : added) {
-                    addedOrUpdatedApps.put(ai.componentName, ai);
+                if(added.size() == 1){//TODO 防止卸载回调导致数据重复
+                    final ArrayList<ItemInfo> addedInfos = new ArrayList<ItemInfo>(added);
+                    addAndBindAddedWorkspaceItems(context, addedInfos);
+                    for (AppInfo ai : added) {
+                        addedOrUpdatedApps.put(ai.componentName, ai);
+                    }
                 }
             }
 
