@@ -109,7 +109,7 @@ public class Hotseat extends FrameLayout
     void resetLayout() {
         mContent.removeAllViewsInLayout();
 
-        // TODO 隐藏hostseat菜单键
+        // 隐藏hostseat菜单键
 
 //        Context context = getContext();
 //

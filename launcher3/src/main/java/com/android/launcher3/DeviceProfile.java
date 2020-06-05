@@ -199,7 +199,7 @@ public class DeviceProfile {
         searchBarSpaceWidthPx = Math.min(widthPx,
                 res.getDimensionPixelSize(R.dimen.dynamic_grid_search_bar_max_width));
 
-        // TODO 搜索栏高度占用
+        //  搜索栏高度占用
 //        searchBarSpaceHeightPx = getSearchBarTopOffset()
 //                + res.getDimensionPixelSize(R.dimen.dynamic_grid_search_bar_height);
         searchBarSpaceHeightPx = res.getDimensionPixelSize(R.dimen.dynamic_grid_page_indicator_height);

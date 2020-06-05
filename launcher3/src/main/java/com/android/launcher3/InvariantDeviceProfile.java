@@ -159,7 +159,7 @@ public class InvariantDeviceProfile {
         minWidthDps = Utilities.dpiFromPx(Math.min(smallestSize.x, smallestSize.y), dm);
         minHeightDps = Utilities.dpiFromPx(Math.min(largestSize.x, largestSize.y), dm);
 
-        //TODO 图标排列兼容处理
+        // 图标排列兼容处理
         ArrayList<InvariantDeviceProfile> closestProfiles =
                 findClosestDeviceProfiles(minWidthDps, minHeightDps,
                         getPredefinedDeviceProfiles(R.xml.default_workspace));

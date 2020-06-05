@@ -45,14 +45,14 @@ public class DeleteDropTarget extends ButtonDropTarget {
 
         setDrawable(R.drawable.ic_remove_launcher);
 
-        //TODO 屏蔽图标
+        // 屏蔽图标
         setCompoundDrawables(null, null, null, null);
 
     }
 
     public static boolean supportsDrop(Object info) {
 
-        //TODO 屏蔽长按删除
+        // 屏蔽长按删除
 //        return (info instanceof ShortcutInfo)
 //                || (info instanceof LauncherAppWidgetInfo)
 //                || (info instanceof FolderInfo);

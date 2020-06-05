@@ -515,7 +515,7 @@ public class Launcher extends Activity
             showFirstRunClings();
         }
 
-        //TODO 创建小部件
+        // 创建小部件
         AppWidgetManagerCompat wm = AppWidgetManagerCompat.getInstance(this);
         LauncherAppWidgetProviderInfo info;
         List<AppWidgetProviderInfo> widgets = wm.getAllProviders();
@@ -629,7 +629,7 @@ public class Launcher extends Activity
 //            return mLauncherCallbacks.hasCustomContentToLeft();
 //        }
 //        return false;
-        //TODO 负一屏处理
+        // 负一屏处理
         return true;
     }
 
@@ -643,7 +643,7 @@ public class Launcher extends Activity
 //            mLauncherCallbacks.populateCustomContentContainer();
 //        }
 
-        //TODO 负一屏view
+        // 负一屏view
         View customView = getLayoutInflater().inflate(R.layout.activity_negative_operation, null);
         addToCustomContentPage(customView,null,"");
 
@@ -4551,7 +4551,7 @@ public class Launcher extends Activity
         // on the device, then we always show the first run cling experience (or if there is no
         // launcher2). Otherwise, we prompt the user upon started for migration
 
-        //TODO 屏蔽开机引导提示
+        // 屏蔽开机引导提示
 //        LauncherClings launcherClings = new LauncherClings(this);
 //        if (launcherClings.shouldShowFirstRunOrMigrationClings()) {
 //            mClings = launcherClings;

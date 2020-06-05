@@ -239,7 +239,7 @@ public final class Utilities {
             icon.setBounds(sOldBounds);
             canvas.setBitmap(null);
 
-            return getRoundedCornerBitmap(bitmap,18);//TODO 定制桌面图标
+            return getRoundedCornerBitmap(bitmap,18);// 定制桌面图标
         }
     }
 

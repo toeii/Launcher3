@@ -1568,7 +1568,7 @@ public class LauncherModel extends BroadcastReceiver
                 if (DEBUG_LOADERS) Log.d(TAG, "step 2: loading all apps");
                 loadAndBindAllApps();
 
-                //TODO 加载数据至一层
+                // 加载数据至一层
                 verifyApplications();
 
             }
@@ -1657,7 +1657,7 @@ public class LauncherModel extends BroadcastReceiver
             long containerIndex = item.screenId;
             if (item.container == LauncherSettings.Favorites.CONTAINER_HOTSEAT) {
                 // Return early if we detect that an item is under the hotseat button
-                //TODO 过滤Main HotSeat处理
+                // 过滤Main HotSeat处理
 //                if (mCallbacks == null ||
 //                        mCallbacks.get().isAllAppsButtonRank((int) item.screenId)) {
 //                    Log.e(TAG, "Error loading shortcut into hotseat " + item
@@ -2996,7 +2996,7 @@ public class LauncherModel extends BroadcastReceiver
 
                     for (String pkg : entry.getValue()) {
                         if (!launcherApps.isPackageEnabledForProfile(pkg, user)) {
-                            //TODO 修复SD卡未加载完读不到的情况
+                            // 修复SD卡未加载完读不到的情况
                             boolean isReadPkg = false;
                             Intent resolveIntent = new Intent(Intent.ACTION_MAIN);
                             resolveIntent.addCategory(Intent.CATEGORY_LAUNCHER);
@@ -3132,9 +3132,9 @@ public class LauncherModel extends BroadcastReceiver
 
             if (added != null && added.size()>0) {
 
-//                addAppsToAllApps(context, added);//TODO 屏蔽二层加载
+//                addAppsToAllApps(context, added);// 屏蔽二层加载
 
-                if(added.size() == 1){//TODO 防止卸载回调导致数据重复
+                if(added.size() == 1){// 防止卸载回调导致数据重复
                     final ArrayList<ItemInfo> addedInfos = new ArrayList<ItemInfo>(added);
                     addAndBindAddedWorkspaceItems(context, addedInfos);
                     for (AppInfo ai : added) {

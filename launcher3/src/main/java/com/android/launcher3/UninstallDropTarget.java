@@ -31,7 +31,7 @@ public class UninstallDropTarget extends ButtonDropTarget {
 
         setDrawable(R.drawable.ic_uninstall_launcher);
 
-        //TODO 屏蔽图标
+        // 屏蔽图标
         setCompoundDrawables(null, null, null, null);
 
     }
