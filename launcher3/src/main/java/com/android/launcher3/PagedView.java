@@ -527,12 +527,6 @@ public abstract class PagedView extends ViewGroup implements ViewGroup.OnHierarc
         if (mIsPageMoving) {
             mIsPageMoving = false;
             onPageEndMoving();
-
-            //TODO 滑动完成
-            if(getCurrentPage() == 0){
-                //TODO 更新负一屏
-
-            }
         }
     }
 

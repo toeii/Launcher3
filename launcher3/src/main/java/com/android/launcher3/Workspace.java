@@ -2519,7 +2519,7 @@ public class Workspace extends PagedView
         return false;
     }
 
-    //TODO 创建用户文件夹？？？
+    //TODO 创建用户文件夹
     boolean createUserFolderIfNecessary(View newView, long container, CellLayout target,
             int[] targetCell, float distance, boolean external, DragView dragView,
             Runnable postAnimationRunnable) {

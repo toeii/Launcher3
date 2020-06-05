@@ -515,7 +515,7 @@ public class Launcher extends Activity
             showFirstRunClings();
         }
 
-        //TODO 主动创建小部件
+        //TODO 创建小部件
         AppWidgetManagerCompat wm = AppWidgetManagerCompat.getInstance(this);
         LauncherAppWidgetProviderInfo info;
         List<AppWidgetProviderInfo> widgets = wm.getAllProviders();
@@ -1270,8 +1270,6 @@ public class Launcher extends Activity
         if (mModel.isCurrentCallbacks(this)) {
             mModel.stopLoader();
         }
-        //TODO(hyunyoungs): stop the widgets loader when there is a rotation.
-
         return Boolean.TRUE;
     }
 

@@ -94,7 +94,7 @@ import java.util.Set;
  */
 public class LauncherModel extends BroadcastReceiver
         implements LauncherAppsCompat.OnAppsChangedCallbackCompat {
-    static final boolean DEBUG_LOADERS = true; //TODO 日志开关
+    static final boolean DEBUG_LOADERS = true;
     private static final boolean DEBUG_RECEIVER = false;
     private static final boolean REMOVE_UNRESTORED_ICONS = true;
 
@@ -2993,16 +2993,31 @@ public class LauncherModel extends BroadcastReceiver
                     UserHandleCompat user = entry.getKey();
                     packagesRemoved.clear();
                     packagesUnavailable.clear();
+
                     for (String pkg : entry.getValue()) {
                         if (!launcherApps.isPackageEnabledForProfile(pkg, user)) {
-                            boolean packageOnSdcard = launcherApps.isAppEnabled(
-                                    manager, pkg, PackageManager.GET_UNINSTALLED_PACKAGES);
-                            if (packageOnSdcard) {
-                                Launcher.addDumpLog(TAG, "Package found on sd-card: " + pkg, true);
-                                packagesUnavailable.add(pkg);
-                            } else {
-                                Launcher.addDumpLog(TAG, "Package not found: " + pkg, true);
-                                packagesRemoved.add(pkg);
+                            //TODO 修复SD卡未加载完读不到的情况
+                            boolean isReadPkg = false;
+                            Intent resolveIntent = new Intent(Intent.ACTION_MAIN);
+                            resolveIntent.addCategory(Intent.CATEGORY_LAUNCHER);
+                            List<ResolveInfo> appsTemp = context.getPackageManager().queryIntentActivities(resolveIntent, PackageManager.GET_RESOLVED_FILTER);
+                            for(ResolveInfo packageInfo : appsTemp){
+                                if (packageInfo != null ) {
+                                    if(pkg.equals(packageInfo.activityInfo.packageName)){
+                                        isReadPkg = true;
+                                    }
+                                }
+                            }
+                            if(!isReadPkg){
+                                boolean packageOnSdcard = launcherApps.isAppEnabled(
+                                        manager, pkg, PackageManager.GET_UNINSTALLED_PACKAGES);
+                                if (packageOnSdcard) {
+                                    Launcher.addDumpLog(TAG, "Package found on sd-card: " + pkg, true);
+                                    packagesUnavailable.add(pkg);
+                                } else {
+                                    Launcher.addDumpLog(TAG, "Package not found: " + pkg, true);
+                                    packagesRemoved.add(pkg);
+                                }
                             }
                         }
                     }
